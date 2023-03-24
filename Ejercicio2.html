@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dada una lista de precios de productos: [500,600,350,1000,200]
+Determinar la cantidad y total de precios entre 0 - 500, 501 - 1000 y superiores a 1000.
+Utilizar un objeto para mostrar los resultados.
+
+    <script>
+        const listaPrecios = [500,600,350,1000,200,1001];
+        const resultadoss = {
+            cantPrecios0A500 : 0,
+            sumaPrecios0A500 : 0,
+            cantPrecios501A1000 : 0,
+            sumaPrecios501A1000 : 0,
+            superiores1000 : 0,
+            sumaSuperiores1000 : 0
+
+        }
+        for (let i = 0; i < listaPrecios.length; i++) {
+            if(listaPrecios[i] >= 0 && listaPrecios[i] <= 500){
+                resultadoss.cantPrecios0A500++;
+                resultadoss.sumaPrecios0A500 += listaPrecios[i];
+            }else if(listaPrecios[i] > 500 && listaPrecios[i] <= 1000){
+                resultadoss.cantPrecios501A1000 ++;
+                resultadoss.sumaPrecios501A1000 += listaPrecios[i];
+            }else if ( listaPrecios[i] > 1000){
+                resultadoss.superiores1000 ++;
+                resultadoss.sumaSuperiores1000 += listaPrecios[i];
+
+            }
+            
+        }
+        console.log(resultadoss);
+
+
+
+    </script>
+</body>
+</html>

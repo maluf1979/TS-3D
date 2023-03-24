@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dado esta lista de objetos, crear una nueva lista de objetos, pero en vez de tener un
+array de pagos, debería tener un array con las cuotas en deuda.
+[{poliza:123,patente:'AA345FD',cantidad_cuotas:12,pagadas[1,2,3,4]},
+{poliza:124,patente:'AA500RR',cantidad_cuotas:6,pagadas[1,2,3,4]},
+{poliza:125,patente:'AA200AA',cantidad_cuotas:12,pagadas[1,2,3,4,5,6,7,8,9,10,11,12]},
+{poliza:126,patente:'AA300SH',cuotas:8,pagadas[1,2]} ]
+Mostrar el resultado por consola
+<script>
+    const polizas = [
+{poliza:123,patente:'AA345FD',cantidad_cuotas:12,pagadas:[1,2,3,4]},
+{poliza:124,patente:'AA500RR',cantidad_cuotas:6,pagadas:[1,2,3,4]},
+{poliza:125,patente:'AA200AA',cantidad_cuotas:12,pagadas:[1,2,3,4,5,6,7,8,9,10,11,12]},
+{poliza:126,patente:'AA300SH',cuotas:8,pagadas:[1,2]} 
+];
+const deudas = [
+    {poliza: "" , patente: "", noPagas:[]}
+];
+for (let i = 0; i < polizas.length; i++) {
+    deudas[i] = poliza = polizas[poliza], patente = polizas[patente]  
+}
+console.log(deudas);
+</script>
+</body>
+</html>
