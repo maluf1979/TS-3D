@@ -15,19 +15,36 @@ array de pagos, debería tener un array con las cuotas en deuda.
 {poliza:126,patente:'AA300SH',cuotas:8,pagadas[1,2]} ]
 Mostrar el resultado por consola
 <script>
-    const polizas = [
+    const listaPolizas = [
 {poliza:123,patente:'AA345FD',cantidad_cuotas:12,pagadas:[1,2,3,4]},
 {poliza:124,patente:'AA500RR',cantidad_cuotas:6,pagadas:[1,2,3,4]},
 {poliza:125,patente:'AA200AA',cantidad_cuotas:12,pagadas:[1,2,3,4,5,6,7,8,9,10,11,12]},
-{poliza:126,patente:'AA300SH',cuotas:8,pagadas:[1,2]} 
+{poliza:126,patente:'AA300SH',cantidad_cuotas:8,pagadas:[1,2]} 
 ];
-const deudas = [
-    {poliza: "" , patente: "", noPagas:[]}
-];
-for (let i = 0; i < polizas.length; i++) {
-    deudas[i] = poliza = polizas[poliza], patente = polizas[patente]  
+console.log(listaPolizas)
+const polizasConDeudas = [];
+
+for (let i = 0; i < listaPolizas.length; i++) {
+    const p = listaPolizas[i];
+    let cantAPagar = obtenerCuotaPagar(p.cantidad_cuotas, p.pagadas);
+    polizasConDeudas[i] = {poliza: p.poliza, patente: p.patente,cant_coutas: p.cantidad_cuotas, por_pagar: cantAPagar};  
 }
-console.log(deudas);
+
+
+function obtenerCuotaPagar(cant, listaCoutas){
+    const cuotasPagar = [];
+    let nInicial = listaCoutas.length;
+    let recorido = cant - listaCoutas.length;
+    for (let i = 0; i < recorido; i++) {
+        cuotasPagar[i] = ++nInicial;        
+    }
+    return cuotasPagar;
+}
+
+
+
+
+console.log(polizasConDeudas);
 </script>
 </body>
 </html>

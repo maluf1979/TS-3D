@@ -11,6 +11,34 @@
 Calcular, utilizando un objeto para los resultados, cantidad de positivos y negativos,
 total de positivos y negativos, cantidad y total de números mayores a 8. Mostrar el
 objeto de los resultados en consola del navegador.*/
+<script>
+    const lista =  [3,6,-4,8,10,-15,30,0,-12,20];
+    const resultado ={
+        cantPos : 0,
+        sumPos : 0,
+        cantNeg : 0,
+        sumNeg : 0,
+        cantMay8 : 0,
+        sumMay8 : 0
+    }
+    for (let i = 0; i< lista.length; i++) {
+        let num = lista[i];
+       if (num > 0) {
+        resultado.cantPos ++;
+        resultado.sumPos += num;
+        if (num > 8) {
+            resultado.cantMay8 ++;
+            resultado.sumMay8 += num;
+        }
+       }else if (num < 0){
+        resultado.cantNeg ++;
+        resultado.sumNeg += num;
+       }
+    }
+
+    console.log(resultado);
+
+</script>
 
 
 </body>
