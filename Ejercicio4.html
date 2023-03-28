@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Crear una clase comprobante de factura, con id, fecha, importe, lista de items 
+(cantidad, descripcion, precio unitario) y una función para calcular el total de la 
+factura. Imprimir el resultado en la consola del navegador.
+<script>
+    class Comprobante{
+        constructor(id, fecha, listaItems){
+            this.id = id;
+            this.fecha = fecha;
+            this.listaItems = listaItems;
+            //this.importe = calcularTotalFactura();
+            
+        }
+        calcularTotalFactura(){
+            let suma = 0;
+            for (let i = 0; i < this.listaItems.length; i++) {
+                suma += (this.listaItems[i].precioUnitario * this.listaItems[i].cantidad);
+            }
+            return suma;
+        }
+    }
+    const comprobante1 = new Comprobante(01, 20230324, [
+        {cantidad:5, descripcion:'caja', precioUnitario:20},
+        {cantida:2,descripcion:'silla', precioUnitario: 250}]);
+
+    console.log(comprobante1);
+    console.log("------------------------");
+    console.log(comprobante1.calcularTotalFactura());
+</script>
+</body>
+</html>
