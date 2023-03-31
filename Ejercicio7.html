@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+Dada esta lista de comprobantes de notas de crédito
+[{id:100,descripcion:”prov1”,precio:1000},{id:102,descripcion:”prov2”,precio:1300}]
+Devolver una nueva lista de comprobantes, con el precio con impuesto de iva
+
+<body>
+    <script>
+        const comprobante = [
+            {id:100,descripcion:'prov1',precio:1000},
+            {id:102,descripcion:'prov2',precio:1300}
+        ];
+
+        const nuevaLista = comprobante.map(e => {return{id:e.id,descripcion:e.descripcion,precio:e.precio * 1.21}})
+        console.log(nuevaLista);
+    </script>
+    
+</body>
+</html>

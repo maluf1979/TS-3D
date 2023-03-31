@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+Dada esta lista de recibos:
+const recibos = [
+{numero: 1000, importe: 1500},
+{numero: 1001, importe: 2300},
+{numero: 1002, importe: 2100}
+]
+Obtener la suma total de los importes.
+
+<body>
+    <script>
+        const recibos = [
+                        {numero: 1000, importe: 1500},
+                        {numero: 1001, importe: 2300},
+                        {numero: 1002, importe: 2100}]
+        console.log(recibos.reduce((a,b) => a+b.importe,0));
+
+    </script>
+    
+</body>
+</html>

@@ -12,24 +12,26 @@
 factura. Imprimir el resultado en la consola del navegador.
 <script>
     class Comprobante{
-        constructor(id, fecha, listaItems){
+
+        constructor(id, fecha, listaItems,importe){
             this.id = id;
             this.fecha = fecha;
             this.listaItems = listaItems;
-            //this.importe = calcularTotalFactura();
+            this.importe = importe;
             
         }
         calcularTotalFactura(){
             let suma = 0;
             for (let i = 0; i < this.listaItems.length; i++) {
-                suma += (this.listaItems[i].precioUnitario * this.listaItems[i].cantidad);
+                let sum = (this.listaItems[i].precioUnitario * this.listaItems[i].cantidad)
+                suma += sum;
             }
             return suma;
         }
     }
     const comprobante1 = new Comprobante(01, 20230324, [
         {cantidad:5, descripcion:'caja', precioUnitario:20},
-        {cantida:2,descripcion:'silla', precioUnitario: 250}]);
+        {cantidad:2,descripcion:'silla', precioUnitario: 250}],0);
 
     console.log(comprobante1);
     console.log("------------------------");

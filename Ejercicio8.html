@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+Dada una lista de números, realizar una función que tome dos parámetros, la lista , un
+numero y que devuelva otra lista con numeros menores al parámetro.
+<body>
+    <script>
+        const numeros = [3,56,34,7,9,23];
+        // HACER CON ARROW FUNTION
+
+        const hacerFilto = (list, n) => list.filter(e => e < n)
+        console.log('con arrow');
+        console.log(hacerFilto(numeros, 10));
+
+        function filtrarLista(lista, num){
+            return numeros.filter(e => e < num);
+        }
+        console.log(filtrarLista(numeros, 10));
+    </script>
+</body>
+</html>
