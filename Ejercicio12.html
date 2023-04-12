@@ -30,7 +30,7 @@ importe
         console.log(recibos.reduce((a,b) => a+b.importe,0));
         
         
-       console.log(recibos.map(e=> e.importe *0.8).filter(e=> e < 2500).reduce((a,b) => a+b,0));
+        console.log(recibos.map(e=> e.importe *0.8).filter(e=> e < 2500).reduce((a,b) => a+b,0));
 
         console.log(recibos.filter(a => a.importe < 2500).map(a => a.importe * 0.8).reduce((a, b) =>a+b,0));
 

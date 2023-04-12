@@ -11,12 +11,13 @@ numero y que devuelva otra lista con numeros menores al parámetro.
 <body>
     <script>
         const numeros = [3,56,34,7,9,23];
-        // HACER CON ARROW FUNTION
 
+        // con arrow funtion
         const hacerFilto = (list, n) => list.filter(e => e < n)
-        console.log('con arrow');
+        //console.log('con arrow');
         console.log(hacerFilto(numeros, 10));
 
+        // sin arrow funtion
         function filtrarLista(lista, num){
             return numeros.filter(e => e < num);
         }
