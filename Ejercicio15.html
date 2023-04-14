@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    Dado una lista de clientes, con id, nombre y edad:<br>
+1- Cargar la lista de clientes en el objeto vue y mostrar la lista<br>
+2- Pedir los datos de un cliente y con un boton, agregarlo a la lista.<br>
+3- Bonus I : agregar un botón por cada elemento de la lista para permitir eliminar<br>
+4- Bonus II: agregar un botón por cada elemento para permitir modificar.  
+
+<div id="app">
+    <li v-for="c in clientes">
+        {{c.id}} {{c.nombre}} {{c.edad}}
+        <button v-on:click="eliminarCliente(c)">Eliminar</button>
+        <button v-on:click="modificarCliente(id, nombre, edad, c)">Modificar</button>
+    </li>
+    Agregar Cliente<br>
+    Id <input type="number" v-model="id">
+    Nombre <input type="text" v-model="nombre">
+    Edad <input type="number" v-model="edad">
+    <button v-on:click="agregarCliente(id, nombre, edad)">Agregar</button>
+</div>
+</body>
+<script>
+    const {createApp} = Vue
+    createApp({
+        data(){
+            return{
+                clientes: [
+                    {id:1,nombre:'Fernando',edad:15},
+                    {id:2,nombre:'Matias',edad:25}
+                ],
+                id:0,
+                nombre: '',
+                edad: 0
+            }
+        },
+        methods:{
+            agregarCliente(id, nombre, edad){
+                let c = {id:id, nombre:nombre, edad:edad}
+                this.clientes.push(c);
+            },
+            eliminarCliente(c){
+                let c1 = this.clientes.indexOf(c);
+                this.clientes.splice(c,1);
+            },
+            modificarCliente(id, nombre, edad, c){
+                let c2 = this.clientes.indexOf(c);
+                this.clientes[c2] = {id:id, nombre:nombre, edad:edad};
+            }
+        }
+    }).mount('#app')
+
+</script>
+</html>
